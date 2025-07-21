@@ -154,7 +154,7 @@ def _build_aar(args):
 
     # The directory to publish final AAR
     aar_publish_dir = os.path.join(build_dir, "aar_out", build_config)
-    os.makedirs(aar_publish_dir, exist_ok=True)
+    os.makedirs(aar_publish_dir, mode=0o777, exist_ok=True)
 
     gradle_path = os.path.join(JAVA_ROOT, "gradlew" if not is_windows() else "gradlew.bat")
 
